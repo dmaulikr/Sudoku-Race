@@ -17,7 +17,12 @@
 		5D357981179288AC00160CC1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D357980179288AC00160CC1 /* Default@2x.png */; };
 		5D357983179288AC00160CC1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D357982179288AC00160CC1 /* Default-568h@2x.png */; };
 		5D357986179288AC00160CC1 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D357984179288AC00160CC1 /* MainStoryboard.storyboard */; };
-		5D357989179288AC00160CC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D357988179288AC00160CC1 /* ViewController.m */; };
+		5D357990179288B800160CC1 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D35798F179288B800160CC1 /* GameKit.framework */; };
+		5D357996179297B800160CC1 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D357995179297B800160CC1 /* Square.m */; };
+		5D35799A17929C9D00160CC1 /* SudokuBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D35799917929C9D00160CC1 /* SudokuBoard.m */; };
+		5D35799D17929DF600160CC1 /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D35799C17929DF600160CC1 /* Row.m */; };
+		5D3579A01792A2D800160CC1 /* SudokuRaceGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D35799F1792A2D800160CC1 /* SudokuRaceGame.m */; };
+		5D3579A31792AD1600160CC1 /* SudokuBoardDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3579A21792AD1600160CC1 /* SudokuBoardDatabase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +40,17 @@
 		5D357980179288AC00160CC1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5D357982179288AC00160CC1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5D357985179288AC00160CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5D357987179288AC00160CC1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5D357988179288AC00160CC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5D35798F179288B800160CC1 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		5D357994179297B800160CC1 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Model/Square.h; sourceTree = "<group>"; };
+		5D357995179297B800160CC1 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Square.m; path = Model/Square.m; sourceTree = "<group>"; };
+		5D35799817929C9D00160CC1 /* SudokuBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SudokuBoard.h; path = Model/SudokuBoard.h; sourceTree = "<group>"; };
+		5D35799917929C9D00160CC1 /* SudokuBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SudokuBoard.m; path = Model/SudokuBoard.m; sourceTree = "<group>"; };
+		5D35799B17929DF600160CC1 /* Row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Row.h; path = Model/Row.h; sourceTree = "<group>"; };
+		5D35799C17929DF600160CC1 /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Row.m; path = Model/Row.m; sourceTree = "<group>"; };
+		5D35799E1792A2D800160CC1 /* SudokuRaceGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SudokuRaceGame.h; path = Model/SudokuRaceGame.h; sourceTree = "<group>"; };
+		5D35799F1792A2D800160CC1 /* SudokuRaceGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SudokuRaceGame.m; path = Model/SudokuRaceGame.m; sourceTree = "<group>"; };
+		5D3579A11792AD1600160CC1 /* SudokuBoardDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SudokuBoardDatabase.h; path = Model/SudokuBoardDatabase.h; sourceTree = "<group>"; };
+		5D3579A21792AD1600160CC1 /* SudokuBoardDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SudokuBoardDatabase.m; path = Model/SudokuBoardDatabase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D357990179288B800160CC1 /* GameKit.framework in Frameworks */,
 				5D35796D179288AC00160CC1 /* UIKit.framework in Frameworks */,
 				5D35796F179288AC00160CC1 /* Foundation.framework in Frameworks */,
 				5D357971179288AC00160CC1 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +88,7 @@
 		5D35796B179288AC00160CC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D35798F179288B800160CC1 /* GameKit.framework */,
 				5D35796C179288AC00160CC1 /* UIKit.framework */,
 				5D35796E179288AC00160CC1 /* Foundation.framework */,
 				5D357970179288AC00160CC1 /* CoreGraphics.framework */,
@@ -83,11 +99,8 @@
 		5D357972179288AC00160CC1 /* SudokuRace */ = {
 			isa = PBXGroup;
 			children = (
-				5D35797B179288AC00160CC1 /* AppDelegate.h */,
-				5D35797C179288AC00160CC1 /* AppDelegate.m */,
 				5D357984179288AC00160CC1 /* MainStoryboard.storyboard */,
-				5D357987179288AC00160CC1 /* ViewController.h */,
-				5D357988179288AC00160CC1 /* ViewController.m */,
+				5D357997179297BD00160CC1 /* Model */,
 				5D357973179288AC00160CC1 /* Supporting Files */,
 			);
 			path = SudokuRace;
@@ -96,6 +109,8 @@
 		5D357973179288AC00160CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D35797B179288AC00160CC1 /* AppDelegate.h */,
+				5D35797C179288AC00160CC1 /* AppDelegate.m */,
 				5D357974179288AC00160CC1 /* SudokuRace-Info.plist */,
 				5D357975179288AC00160CC1 /* InfoPlist.strings */,
 				5D357978179288AC00160CC1 /* main.m */,
@@ -105,6 +120,23 @@
 				5D357982179288AC00160CC1 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D357997179297BD00160CC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D357994179297B800160CC1 /* Square.h */,
+				5D357995179297B800160CC1 /* Square.m */,
+				5D35799B17929DF600160CC1 /* Row.h */,
+				5D35799C17929DF600160CC1 /* Row.m */,
+				5D35799817929C9D00160CC1 /* SudokuBoard.h */,
+				5D35799917929C9D00160CC1 /* SudokuBoard.m */,
+				5D3579A11792AD1600160CC1 /* SudokuBoardDatabase.h */,
+				5D3579A21792AD1600160CC1 /* SudokuBoardDatabase.m */,
+				5D35799E1792A2D800160CC1 /* SudokuRaceGame.h */,
+				5D35799F1792A2D800160CC1 /* SudokuRaceGame.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +207,11 @@
 			files = (
 				5D357979179288AC00160CC1 /* main.m in Sources */,
 				5D35797D179288AC00160CC1 /* AppDelegate.m in Sources */,
-				5D357989179288AC00160CC1 /* ViewController.m in Sources */,
+				5D357996179297B800160CC1 /* Square.m in Sources */,
+				5D35799A17929C9D00160CC1 /* SudokuBoard.m in Sources */,
+				5D35799D17929DF600160CC1 /* Row.m in Sources */,
+				5D3579A01792A2D800160CC1 /* SudokuRaceGame.m in Sources */,
+				5D3579A31792AD1600160CC1 /* SudokuBoardDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
