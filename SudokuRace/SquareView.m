@@ -99,8 +99,8 @@
     } else if (self.playerTwoValue && !self.playerOneValue) {
         valueText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d", self.playerTwoValue] attributes:@{ NSParagraphStyleAttributeName : paragraphStyle, NSFontAttributeName : valueFont, NSForegroundColorAttributeName : [UIColor blueColor] }];
     } else if (self.playerTwoValue && self.playerOneValue) {
-        valueText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d %d", self.playerOneValue, self.playerTwoValue] attributes:@{ NSParagraphStyleAttributeName : paragraphStyle, NSFontAttributeName : dualValueFont, NSForegroundColorAttributeName : [UIColor redColor] }];
-        [valueText setAttributes:@{NSForegroundColorAttributeName : [UIColor blueColor] } range:NSMakeRange (2,1)];
+        valueText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d\n%d", self.playerOneValue, self.playerTwoValue] attributes:@{ NSParagraphStyleAttributeName : paragraphStyle, NSFontAttributeName : dualValueFont, NSForegroundColorAttributeName : [UIColor redColor] }];
+        [valueText setAttributes:@{NSParagraphStyleAttributeName : paragraphStyle, NSForegroundColorAttributeName : [UIColor blueColor] } range:NSMakeRange (2,1)];
     }
     
     CGRect textBounds;
