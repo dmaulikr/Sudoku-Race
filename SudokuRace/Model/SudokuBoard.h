@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Row.h"
+#import "Square.h"
 
 @interface SudokuBoard : NSObject
 
-- (void)addRow:(Row *)row;
+@property (nonatomic) NSUInteger numberOfSquares;
 
-- (Row *)rowAtIndex:(NSUInteger)index;
+- (void)addSquare:(Square *)square;
+
+- (id)initWithDifficulty:(NSString *)difficulty;
+
+- (Square *)squareAtIndex:(NSUInteger)index;
 
 @end

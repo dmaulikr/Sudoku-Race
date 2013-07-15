@@ -11,51 +11,59 @@
 
 @interface SudokuBoard()
 
-@property (strong, nonatomic) NSMutableArray *rows; // Array of Rows
+@property (strong, nonatomic) NSMutableArray *squares; // Array of Squares
 
 @end
 
 @implementation SudokuBoard
 
-#define ROW_LENGTH 9
-#define NUMBER_OF_ROWS 9
+#define NUMBER_OF_SQUARES 81
 
-- (NSMutableArray *)rows
+- (NSUInteger)numberOfSquares
 {
-    if (!_rows) _rows = [[NSMutableArray alloc] init];
-    return _rows;
+    if (!_numberOfSquares) _numberOfSquares = [self.squares count];
+    return _numberOfSquares;
 }
 
-- (void)addRow:(Row *)row
+- (NSMutableArray *)squares
 {
-    if ([row length] == ROW_LENGTH) {
-        [self.rows addObject:row];
+    if (!_squares) _squares = [[NSMutableArray alloc] init];
+    return _squares;
+}
+
+- (void)addSquare:(Square *)square
+{
+    if ([self.squares count] < NUMBER_OF_SQUARES) {
+        [self.squares addObject:square];
     }
 }
 
-- (Row *)rowAtIndex:(NSUInteger)index
+- (Square *)squareAtIndex:(NSUInteger)index
 {
-    return (index <= [self.rows count]) ? self.rows[index] : nil;
+    return (index < self.numberOfSquares) ? self.squares[index] : nil;
 }
 
 #define MAKE_RANDOM 1
 
 - (id)initWithDifficulty:(NSString *)difficulty;
 {
+    NSLog(@"1/ Attempting initWithDifficulty: %@", difficulty);
     self = [super init];
     
     if (self)
     {
         if ([difficulty isEqualToString:@"easy"]) {
-            NSDictionary *board = [SudokuBoardDatabase easyBoards];
-            if (board) {
-                for (int i = 0; i < NUMBER_OF_ROWS; i++)
-                {
-                    Row *row = [[Row alloc] init];
-                    for (int i = 0; i < ROW_LENGTH; i++)
+            NSDictionary *easyBoards = [SudokuBoardDatabase easyBoards];
+            NSLog(@"2/ Got Board: %@", easyBoards);
+            if (easyBoards) {
+                NSLog(@"Creating board from squares...");
+                id values = [easyBoards objectForKey:[NSString stringWithFormat:@"%d", MAKE_RANDOM]];
+                if ([values isKindOfClass:[NSArray class]]) {
+                    NSArray *arrayOfValues = values;
+                    for (int i = 0; i < [values count]; i++)
                     {
                         Square *square = [[Square alloc] init];
-                        id value = [board objectForKey:[NSString stringWithFormat:@"%d", MAKE_RANDOM]];
+                        id value = arrayOfValues[i];
                         if ([value isKindOfClass:[NSNumber class]]) {
                             NSNumber *numberValue = value;
                             square.initialValue = [numberValue integerValue];
@@ -64,16 +72,15 @@
                             } else {
                                 square.Locked = YES;
                             }
-                            [row addSquare:square];
+                            NSLog(@"Attemtping to add Square with initial value %d", square.initialValue);
+                            [self addSquare:square];
                         }
                     }
-                    [self addRow:row];
+
                 }
             }
         }
-        
     }
-    
     return self;
 }
 

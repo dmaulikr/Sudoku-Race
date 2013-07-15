@@ -20,9 +20,11 @@
 		5D357990179288B800160CC1 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D35798F179288B800160CC1 /* GameKit.framework */; };
 		5D357996179297B800160CC1 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D357995179297B800160CC1 /* Square.m */; };
 		5D35799A17929C9D00160CC1 /* SudokuBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D35799917929C9D00160CC1 /* SudokuBoard.m */; };
-		5D35799D17929DF600160CC1 /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D35799C17929DF600160CC1 /* Row.m */; };
 		5D3579A01792A2D800160CC1 /* SudokuRaceGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D35799F1792A2D800160CC1 /* SudokuRaceGame.m */; };
 		5D3579A31792AD1600160CC1 /* SudokuBoardDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3579A21792AD1600160CC1 /* SudokuBoardDatabase.m */; };
+		5D3579A617938F6200160CC1 /* SudokuRaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3579A517938F6200160CC1 /* SudokuRaceViewController.m */; };
+		5D3579A91793982200160CC1 /* SudokuRaceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3579A81793982200160CC1 /* SudokuRaceCollectionViewCell.m */; };
+		5D3579AC1793987700160CC1 /* SquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3579AB1793987700160CC1 /* SquareView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,12 +47,16 @@
 		5D357995179297B800160CC1 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Square.m; path = Model/Square.m; sourceTree = "<group>"; };
 		5D35799817929C9D00160CC1 /* SudokuBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SudokuBoard.h; path = Model/SudokuBoard.h; sourceTree = "<group>"; };
 		5D35799917929C9D00160CC1 /* SudokuBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SudokuBoard.m; path = Model/SudokuBoard.m; sourceTree = "<group>"; };
-		5D35799B17929DF600160CC1 /* Row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Row.h; path = Model/Row.h; sourceTree = "<group>"; };
-		5D35799C17929DF600160CC1 /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Row.m; path = Model/Row.m; sourceTree = "<group>"; };
 		5D35799E1792A2D800160CC1 /* SudokuRaceGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SudokuRaceGame.h; path = Model/SudokuRaceGame.h; sourceTree = "<group>"; };
 		5D35799F1792A2D800160CC1 /* SudokuRaceGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SudokuRaceGame.m; path = Model/SudokuRaceGame.m; sourceTree = "<group>"; };
 		5D3579A11792AD1600160CC1 /* SudokuBoardDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SudokuBoardDatabase.h; path = Model/SudokuBoardDatabase.h; sourceTree = "<group>"; };
 		5D3579A21792AD1600160CC1 /* SudokuBoardDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SudokuBoardDatabase.m; path = Model/SudokuBoardDatabase.m; sourceTree = "<group>"; };
+		5D3579A417938F6200160CC1 /* SudokuRaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SudokuRaceViewController.h; sourceTree = "<group>"; };
+		5D3579A517938F6200160CC1 /* SudokuRaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SudokuRaceViewController.m; sourceTree = "<group>"; };
+		5D3579A71793982200160CC1 /* SudokuRaceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SudokuRaceCollectionViewCell.h; sourceTree = "<group>"; };
+		5D3579A81793982200160CC1 /* SudokuRaceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SudokuRaceCollectionViewCell.m; sourceTree = "<group>"; };
+		5D3579AA1793987700160CC1 /* SquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareView.h; sourceTree = "<group>"; };
+		5D3579AB1793987700160CC1 /* SquareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				5D357984179288AC00160CC1 /* MainStoryboard.storyboard */,
+				5D3579A417938F6200160CC1 /* SudokuRaceViewController.h */,
+				5D3579A517938F6200160CC1 /* SudokuRaceViewController.m */,
+				5D3579A71793982200160CC1 /* SudokuRaceCollectionViewCell.h */,
+				5D3579A81793982200160CC1 /* SudokuRaceCollectionViewCell.m */,
+				5D3579AA1793987700160CC1 /* SquareView.h */,
+				5D3579AB1793987700160CC1 /* SquareView.m */,
 				5D357997179297BD00160CC1 /* Model */,
 				5D357973179288AC00160CC1 /* Supporting Files */,
 			);
@@ -127,8 +139,6 @@
 			children = (
 				5D357994179297B800160CC1 /* Square.h */,
 				5D357995179297B800160CC1 /* Square.m */,
-				5D35799B17929DF600160CC1 /* Row.h */,
-				5D35799C17929DF600160CC1 /* Row.m */,
 				5D35799817929C9D00160CC1 /* SudokuBoard.h */,
 				5D35799917929C9D00160CC1 /* SudokuBoard.m */,
 				5D3579A11792AD1600160CC1 /* SudokuBoardDatabase.h */,
@@ -209,9 +219,11 @@
 				5D35797D179288AC00160CC1 /* AppDelegate.m in Sources */,
 				5D357996179297B800160CC1 /* Square.m in Sources */,
 				5D35799A17929C9D00160CC1 /* SudokuBoard.m in Sources */,
-				5D35799D17929DF600160CC1 /* Row.m in Sources */,
 				5D3579A01792A2D800160CC1 /* SudokuRaceGame.m in Sources */,
 				5D3579A31792AD1600160CC1 /* SudokuBoardDatabase.m in Sources */,
+				5D3579A617938F6200160CC1 /* SudokuRaceViewController.m in Sources */,
+				5D3579A91793982200160CC1 /* SudokuRaceCollectionViewCell.m in Sources */,
+				5D3579AC1793987700160CC1 /* SquareView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

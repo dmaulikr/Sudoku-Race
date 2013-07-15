@@ -19,33 +19,47 @@
 
 @implementation SudokuRaceGame
 
-- (void)changeValueForPlayer:(NSString *)player forRowIndex:(NSUInteger)row forSquareIndex:(NSUInteger)square withValue:(int)value
+- (void)changeValueForPlayer:(NSString *)player forSquareIndex:(NSUInteger)index withValue:(int)value
 {    
-    Row *selectedRow = [self.sudokuBoard rowAtIndex:row];
-    Square *selectedSquare = [selectedRow squareAtIndex:square];
+    NSLog(@"Attempting to changeValueForPlayer: %@ forSquareIndex: %d for value: %d", player, index, value);
+    Square *selectedSquare = [self squareAtIndex:index];
     
     if (!selectedSquare.isLocked) {
         if ([player isEqualToString:@"one"]) {
-            if (!selectedSquare.playerTwoValue == value) {
+            if (selectedSquare.playerTwoValue != value) {
                 selectedSquare.playerOneValue = value;
             }
+            selectedSquare.playerOneSelected = YES;
         } else if ([player isEqualToString:@"two"]) {
-            if (!selectedSquare.playerOneValue == value) {
+            if (selectedSquare.playerOneValue != value) {
                 selectedSquare.playerTwoValue = value;
             }
+            selectedSquare.playerTwoSelected = YES;
         }
     }
 }
 
 - (id)initWithSudokuBoard:(SudokuBoard *)sudokuBoard
 {
+    NSLog(@"Attempting initWithSudokuBoard with board: %@", sudokuBoard);
     self = [super init];
     
     if (self) {
         self.sudokuBoard = sudokuBoard;
+        NSLog(@"Sudoku board successfully added to game");
     }
     
     return self;
+}
+
+- (NSUInteger)numberOfSquares
+{
+    return self.sudokuBoard.numberOfSquares;
+}
+
+- (Square *)squareAtIndex:(NSUInteger)index
+{
+    return [self.sudokuBoard squareAtIndex:index];
 }
 
 @end
