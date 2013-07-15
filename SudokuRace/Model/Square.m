@@ -10,7 +10,7 @@
 
 @implementation Square
 
-#define MIN_VALUE 1
+#define MIN_VALUE 0
 #define MAX_VALUE 9
 
 - (void)setPlayerOneValue:(int)playerOneValue

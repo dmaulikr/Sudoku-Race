@@ -19,18 +19,37 @@
 
 @implementation SudokuRaceGame
 
-- (void)changeValueForPlayer:(NSString *)player forSquareIndex:(NSUInteger)index withValue:(int)value
+- (void)changeValueForPlayer:(NSString *)player withValue:(int)value
 {    
-    NSLog(@"Attempting to changeValueForPlayer: %@ forSquareIndex: %d for value: %d", player, index, value);
-    Square *selectedSquare = [self squareAtIndex:index];
+    NSLog(@"Attempting to changeValueForPlayer: %@ for value: %d", player, value);
+    
+    Square *selectedSquare = nil;
+    for (int i = 0; i < [self numberOfSquares]; i++) {
+        Square *square = [self squareAtIndex:i];
+        if ([player isEqualToString:@"one"]) {
+            if (square.playerOneSelected) {
+                selectedSquare = square;
+                i = [self numberOfSquares];
+            }
+        } else if ([player isEqualToString:@"two"]) {
+            if (square.playerTwoSelected) {
+                selectedSquare = square;
+                i = [self numberOfSquares];
+            }
+        }
+    }
     
     if (!selectedSquare.isLocked) {
         if ([player isEqualToString:@"one"]) {
-            if (selectedSquare.playerTwoValue != value) {
+            if (value == 0) {
+                selectedSquare.playerOneValue = 0;
+            } else if (selectedSquare.playerTwoValue != value) {
                 selectedSquare.playerOneValue = value;
             }
         } else if ([player isEqualToString:@"two"]) {
-            if (selectedSquare.playerOneValue != value) {
+            if (value == 0) {
+                selectedSquare.playerTwoValue = 0;
+            } else if (selectedSquare.playerOneValue != value) {
                 selectedSquare.playerTwoValue = value;
             }
         }

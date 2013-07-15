@@ -25,12 +25,24 @@
                                     <action selector="newGame" destination="2" eventType="touchUpInside" id="DAi-sG-yHv"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="M7x-S4-d1L">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Ey8-ga-hOp"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectPlayer:" destination="2" eventType="valueChanged" id="VMv-OC-4Ki"/>
+                                </connections>
+                            </segmentedControl>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6k-pG-lOF" customClass="KeyPadView">
                                 <subviews>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-gW-lXh">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="29" id="KE0-KL-2zT"/>
-                                            <constraint firstAttribute="width" constant="24" id="umO-Wn-YDI"/>
+                                            <constraint firstAttribute="width" constant="24" id="gz1-Xy-sJJ"/>
+                                            <constraint firstAttribute="height" constant="29" id="z1p-Lq-z6y"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="1">
@@ -39,10 +51,13 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="MJQ-Ie-pk6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-F7-3c8">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="CGm-nV-Rnh"/>
+                                            <constraint firstAttribute="width" constant="24" id="52p-zw-ucG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="2">
@@ -51,10 +66,13 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="yCR-VK-rws"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNR-t0-ant">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="5ht-S4-DX4"/>
+                                            <constraint firstAttribute="width" constant="24" id="PHe-2y-lyG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="3">
@@ -63,10 +81,13 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="hmO-2C-ZlS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wn-DF-VCK">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="40p-xh-eil"/>
+                                            <constraint firstAttribute="width" constant="24" id="JcS-Tp-Ko7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="4">
@@ -75,6 +96,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="dNC-jB-XZy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAj-g4-zMw">
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -84,10 +108,13 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="dpS-Op-TRL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfQ-Gm-gRS">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="tvv-vH-PC3"/>
+                                            <constraint firstAttribute="width" constant="24" id="TBR-ic-ps8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="6">
@@ -96,11 +123,11 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="9nN-rb-slU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Fq-oE-Y63">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="yUR-Is-l40"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="7">
                                             <color key="titleColor" red="0.91310716711956519" green="0.69241238524333582" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -108,10 +135,13 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="Jca-co-zA7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJM-8c-Ktm">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="IkY-VZ-xeV"/>
+                                            <constraint firstAttribute="width" constant="24" id="svz-yW-77P"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="8">
@@ -120,6 +150,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="xpK-K3-i3i"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNy-jZ-27d">
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -129,11 +162,13 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="dTh-1C-b0p"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7i-Yg-KEG">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="164" id="3T8-Mq-71E"/>
-                                            <constraint firstAttribute="height" constant="27" id="Crf-IL-AQq"/>
+                                            <constraint firstAttribute="height" constant="27" type="user" id="Crf-IL-AQq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Clear">
@@ -142,68 +177,69 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressKeyPad:" destination="2" eventType="touchUpInside" id="yGJ-3N-D7r"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86858865489130432" green="0.82086358661678693" blue="0.67146576327720764" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="RfQ-Gm-gRS" firstAttribute="baseline" secondItem="Oca-gW-lXh" secondAttribute="baseline" type="user" id="09v-wi-rvR"/>
-                                    <constraint firstItem="RfQ-Gm-gRS" firstAttribute="leading" secondItem="BAj-g4-zMw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0Dp-fe-gS1"/>
+                                    <constraint firstItem="B7i-Yg-KEG" firstAttribute="centerX" secondItem="BAj-g4-zMw" secondAttribute="centerX" type="default" id="0Fx-0Q-614"/>
                                     <constraint firstItem="zNy-jZ-27d" firstAttribute="baseline" secondItem="bJM-8c-Ktm" secondAttribute="baseline" type="user" id="0wE-og-Lgx"/>
                                     <constraint firstItem="1Fq-oE-Y63" firstAttribute="top" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="1XJ-V9-6PT"/>
                                     <constraint firstItem="zNy-jZ-27d" firstAttribute="baseline" secondItem="RfQ-Gm-gRS" secondAttribute="baseline" type="user" id="1vk-EW-Baa"/>
                                     <constraint firstItem="sNR-t0-ant" firstAttribute="top" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="3QZ-H9-GIF"/>
                                     <constraint firstItem="BAj-g4-zMw" firstAttribute="baseline" secondItem="bJM-8c-Ktm" secondAttribute="baseline" type="user" id="4Jb-If-gFj"/>
                                     <constraint firstItem="zNy-jZ-27d" firstAttribute="baseline" secondItem="sNR-t0-ant" secondAttribute="baseline" type="user" id="4Rs-YM-s4P"/>
-                                    <constraint firstAttribute="trailing" secondItem="zNy-jZ-27d" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5GF-uh-RmB"/>
                                     <constraint firstItem="4wn-DF-VCK" firstAttribute="top" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="6VX-zS-39k"/>
                                     <constraint firstItem="1Fq-oE-Y63" firstAttribute="baseline" secondItem="sNR-t0-ant" secondAttribute="baseline" type="user" id="6h8-K2-acP"/>
+                                    <constraint firstItem="4wn-DF-VCK" firstAttribute="leading" secondItem="sNR-t0-ant" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="7E4-RE-1Ou"/>
                                     <constraint firstItem="RfQ-Gm-gRS" firstAttribute="baseline" secondItem="sNR-t0-ant" secondAttribute="baseline" type="user" id="7WS-Ih-KbI"/>
+                                    <constraint firstItem="bPj-F7-3c8" firstAttribute="leading" secondItem="Oca-gW-lXh" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="86l-cW-Fid"/>
                                     <constraint firstAttribute="bottom" secondItem="B7i-Yg-KEG" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="9Iy-Ub-vfr"/>
                                     <constraint firstItem="RfQ-Gm-gRS" firstAttribute="bottom" secondItem="1Fq-oE-Y63" secondAttribute="bottom" type="default" id="9pH-7E-azy"/>
-                                    <constraint firstItem="BAj-g4-zMw" firstAttribute="centerX" secondItem="g6k-pG-lOF" secondAttribute="centerX" type="default" id="CLO-dE-0N7"/>
+                                    <constraint firstItem="BAj-g4-zMw" firstAttribute="leading" secondItem="4wn-DF-VCK" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="CIf-5x-9qT"/>
                                     <constraint firstItem="zNy-jZ-27d" firstAttribute="top" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="EnH-6D-ZfW"/>
                                     <constraint firstItem="zNy-jZ-27d" firstAttribute="baseline" secondItem="4wn-DF-VCK" secondAttribute="baseline" type="user" id="Etb-o6-41R"/>
+                                    <constraint firstItem="1Fq-oE-Y63" firstAttribute="leading" secondItem="RfQ-Gm-gRS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="FPC-5T-ikZ"/>
                                     <constraint firstItem="1Fq-oE-Y63" firstAttribute="baseline" secondItem="bPj-F7-3c8" secondAttribute="baseline" type="user" id="FSC-Ag-ySR"/>
                                     <constraint firstItem="RfQ-Gm-gRS" firstAttribute="baseline" secondItem="BAj-g4-zMw" secondAttribute="baseline" type="user" id="FoR-rh-41u"/>
                                     <constraint firstItem="RfQ-Gm-gRS" firstAttribute="baseline" secondItem="bJM-8c-Ktm" secondAttribute="baseline" type="user" id="GjK-Ww-cJa"/>
                                     <constraint firstItem="BAj-g4-zMw" firstAttribute="baseline" secondItem="1Fq-oE-Y63" secondAttribute="baseline" type="user" id="GnJ-XF-Z26"/>
                                     <constraint firstItem="RfQ-Gm-gRS" firstAttribute="baseline" secondItem="4wn-DF-VCK" secondAttribute="baseline" type="user" id="Hc6-1R-ED7"/>
-                                    <constraint firstItem="4wn-DF-VCK" firstAttribute="leading" secondItem="sNR-t0-ant" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="KXi-O2-UFs"/>
                                     <constraint firstItem="RfQ-Gm-gRS" firstAttribute="baseline" secondItem="bPj-F7-3c8" secondAttribute="baseline" type="user" id="LeC-Go-cdW"/>
+                                    <constraint firstAttribute="trailing" secondItem="zNy-jZ-27d" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="MVL-RO-oee"/>
+                                    <constraint firstItem="RfQ-Gm-gRS" firstAttribute="leading" secondItem="BAj-g4-zMw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Mfz-3J-4Fj"/>
+                                    <constraint firstItem="Oca-gW-lXh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="user" id="Mlw-cW-zMO"/>
                                     <constraint firstItem="Oca-gW-lXh" firstAttribute="top" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="NS2-mK-oq5"/>
                                     <constraint firstItem="bJM-8c-Ktm" firstAttribute="baseline" secondItem="bPj-F7-3c8" secondAttribute="baseline" type="user" id="NTF-if-l38"/>
-                                    <constraint firstItem="zNy-jZ-27d" firstAttribute="baseline" secondItem="Oca-gW-lXh" secondAttribute="baseline" type="user" id="NoC-Wl-3xN"/>
                                     <constraint firstItem="1Fq-oE-Y63" firstAttribute="baseline" secondItem="zNy-jZ-27d" secondAttribute="baseline" type="user" id="NwX-5Y-7rW"/>
-                                    <constraint firstItem="1Fq-oE-Y63" firstAttribute="leading" secondItem="RfQ-Gm-gRS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Pi1-Ji-uXg"/>
                                     <constraint firstItem="zNy-jZ-27d" firstAttribute="baseline" secondItem="bPj-F7-3c8" secondAttribute="baseline" type="user" id="Pi4-Wd-NTu"/>
                                     <constraint firstItem="BAj-g4-zMw" firstAttribute="baseline" secondItem="bPj-F7-3c8" secondAttribute="baseline" type="user" id="ROY-hJ-Pu2"/>
                                     <constraint firstItem="Oca-gW-lXh" firstAttribute="bottom" secondItem="bPj-F7-3c8" secondAttribute="bottom" type="default" id="SbL-cc-JkV"/>
-                                    <constraint firstItem="sNR-t0-ant" firstAttribute="leading" secondItem="B7i-Yg-KEG" secondAttribute="leading" type="default" id="Vml-N0-H1M"/>
-                                    <constraint firstItem="bJM-8c-Ktm" firstAttribute="baseline" secondItem="Oca-gW-lXh" secondAttribute="baseline" type="user" id="Xao-Uy-KIW"/>
                                     <constraint firstItem="1Fq-oE-Y63" firstAttribute="baseline" secondItem="bJM-8c-Ktm" secondAttribute="baseline" type="user" id="Zc6-g5-iav"/>
+                                    <constraint firstItem="sNR-t0-ant" firstAttribute="leading" secondItem="bPj-F7-3c8" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="a0R-NI-trO"/>
                                     <constraint firstItem="4wn-DF-VCK" firstAttribute="bottom" secondItem="BAj-g4-zMw" secondAttribute="bottom" type="default" id="aWd-li-mYf"/>
                                     <constraint firstItem="sNR-t0-ant" firstAttribute="bottom" secondItem="bPj-F7-3c8" secondAttribute="bottom" type="default" id="eHo-hF-DB0"/>
                                     <constraint firstItem="RfQ-Gm-gRS" firstAttribute="bottom" secondItem="BAj-g4-zMw" secondAttribute="bottom" type="default" id="fUQ-qm-FoR"/>
+                                    <constraint firstItem="zNy-jZ-27d" firstAttribute="leading" secondItem="bJM-8c-Ktm" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="fUf-GK-JuJ"/>
                                     <constraint firstItem="bJM-8c-Ktm" firstAttribute="baseline" secondItem="sNR-t0-ant" secondAttribute="baseline" type="user" id="gv7-MW-X5X"/>
                                     <constraint firstItem="1Fq-oE-Y63" firstAttribute="bottom" secondItem="bJM-8c-Ktm" secondAttribute="bottom" type="default" id="hbi-1u-1oP"/>
+                                    <constraint firstItem="B7i-Yg-KEG" firstAttribute="trailing" secondItem="1Fq-oE-Y63" secondAttribute="trailing" type="default" id="jL2-pA-cAO"/>
                                     <constraint firstItem="bJM-8c-Ktm" firstAttribute="bottom" secondItem="zNy-jZ-27d" secondAttribute="bottom" type="default" id="jmi-S9-tNF"/>
-                                    <constraint firstItem="sNR-t0-ant" firstAttribute="leading" secondItem="bPj-F7-3c8" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="l1C-sG-2mE"/>
+                                    <constraint firstItem="bJM-8c-Ktm" firstAttribute="leading" secondItem="1Fq-oE-Y63" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="l2e-AS-d5T"/>
                                     <constraint firstItem="BAj-g4-zMw" firstAttribute="baseline" secondItem="4wn-DF-VCK" secondAttribute="baseline" type="user" id="lGq-v4-Jvw"/>
-                                    <constraint firstItem="zNy-jZ-27d" firstAttribute="leading" secondItem="bJM-8c-Ktm" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="liI-4O-D7p"/>
                                     <constraint firstItem="RfQ-Gm-gRS" firstAttribute="baseline" secondItem="1Fq-oE-Y63" secondAttribute="baseline" type="user" id="nFr-aK-nDx"/>
                                     <constraint firstItem="RfQ-Gm-gRS" firstAttribute="top" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="nZw-iU-1wE"/>
-                                    <constraint firstItem="BAj-g4-zMw" firstAttribute="baseline" secondItem="Oca-gW-lXh" secondAttribute="baseline" type="user" id="oKU-PB-Xxp"/>
-                                    <constraint firstItem="Oca-gW-lXh" firstAttribute="leading" secondItem="g6k-pG-lOF" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qSk-YT-cwW"/>
+                                    <constraint firstItem="BAj-g4-zMw" firstAttribute="centerX" secondItem="g6k-pG-lOF" secondAttribute="centerX" type="default" id="oyc-Ap-HPz"/>
+                                    <constraint firstItem="Oca-gW-lXh" firstAttribute="leading" secondItem="g6k-pG-lOF" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="qSk-YT-cwW"/>
                                     <constraint firstItem="sNR-t0-ant" firstAttribute="bottom" secondItem="4wn-DF-VCK" secondAttribute="bottom" type="default" id="rdT-QX-vwE"/>
+                                    <constraint firstItem="B7i-Yg-KEG" firstAttribute="leading" secondItem="sNR-t0-ant" secondAttribute="leading" type="default" id="sJj-tN-SW7"/>
                                     <constraint firstItem="BAj-g4-zMw" firstAttribute="baseline" secondItem="sNR-t0-ant" secondAttribute="baseline" type="user" id="sOe-nY-bir"/>
                                     <constraint firstItem="BAj-g4-zMw" firstAttribute="top" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="sWV-l8-tce"/>
                                     <constraint firstItem="1Fq-oE-Y63" firstAttribute="baseline" secondItem="4wn-DF-VCK" secondAttribute="baseline" type="user" id="sdN-Vx-GVk"/>
                                     <constraint firstItem="bJM-8c-Ktm" firstAttribute="top" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="tPN-ZH-g7c"/>
-                                    <constraint firstItem="BAj-g4-zMw" firstAttribute="leading" secondItem="4wn-DF-VCK" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="vBr-2v-dXo"/>
-                                    <constraint firstItem="1Fq-oE-Y63" firstAttribute="baseline" secondItem="Oca-gW-lXh" secondAttribute="baseline" type="user" id="xYj-Yw-QQg"/>
                                     <constraint firstItem="zNy-jZ-27d" firstAttribute="baseline" secondItem="BAj-g4-zMw" secondAttribute="baseline" type="user" id="yja-i9-1ir"/>
-                                    <constraint firstItem="bJM-8c-Ktm" firstAttribute="leading" secondItem="1Fq-oE-Y63" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="yvP-Ju-Ipe"/>
-                                    <constraint firstItem="bPj-F7-3c8" firstAttribute="leading" secondItem="Oca-gW-lXh" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="yxC-8n-C4O"/>
                                     <constraint firstItem="bPj-F7-3c8" firstAttribute="top" secondItem="g6k-pG-lOF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ze9-I0-CLe"/>
                                     <constraint firstItem="bJM-8c-Ktm" firstAttribute="baseline" secondItem="4wn-DF-VCK" secondAttribute="baseline" type="user" id="zmO-F3-1Fs"/>
                                 </constraints>
@@ -211,6 +247,7 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2gf-pd-yBf" customClass="squareCollectionView">
                                 <color key="backgroundColor" red="0.62204203729999996" green="0.71386056190000002" blue="0.88461701770000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="4hW-U8-y9m"/>
                                     <constraint firstAttribute="height" constant="350" id="jy7-DL-POL"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="0FV-El-3Lw">
@@ -255,13 +292,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="g6k-pG-lOF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="351" id="4C8-RM-58L"/>
+                            <constraint firstItem="M7x-S4-d1L" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="0tP-Ik-0yf"/>
                             <constraint firstAttribute="centerX" secondItem="00u-GK-dig" secondAttribute="centerX" type="user" id="556-6x-gQ5"/>
-                            <constraint firstItem="2gf-pd-yBf" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="FKm-zH-02l"/>
                             <constraint firstItem="2gf-pd-yBf" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="G6d-zT-lfQ"/>
+                            <constraint firstItem="g6k-pG-lOF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="351" id="SSW-Ti-1mN"/>
                             <constraint firstItem="g6k-pG-lOF" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Tw3-mU-ig7"/>
                             <constraint firstItem="g6k-pG-lOF" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="V38-yi-pml"/>
-                            <constraint firstItem="2gf-pd-yBf" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="h1L-jm-6B0"/>
+                            <constraint firstItem="2gf-pd-yBf" firstAttribute="centerX" secondItem="00u-GK-dig" secondAttribute="centerX" type="default" id="a0j-AI-buC"/>
+                            <constraint firstAttribute="bottom" secondItem="M7x-S4-d1L" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="g2w-aw-toW"/>
                             <constraint firstAttribute="bottom" secondItem="00u-GK-dig" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="rjA-b1-Okh"/>
                             <constraint firstItem="g6k-pG-lOF" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="y3x-Rt-cGK"/>
                         </constraints>
@@ -298,6 +336,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SudokuRaceViewController.h"/>
             <relationships>
                 <relationship kind="action" name="editSquare:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="pressKeyPad:" candidateClass="UIButton"/>
+                <relationship kind="action" name="selectPlayer:" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="keyPadView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="squareCollectionView" candidateClass="UICollectionView"/>
             </relationships>

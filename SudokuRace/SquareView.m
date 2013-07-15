@@ -80,6 +80,7 @@
 }
 
 #define PIP_FONT_SCALE_FACTOR 0.8
+#define DUAL_PIP_FONT_SCALE_FACTOR 0.4
 
 - (void)drawValues
 {
@@ -87,6 +88,7 @@
     paragraphStyle.alignment = NSTextAlignmentCenter;
     
     UIFont *valueFont = [UIFont systemFontOfSize:self.bounds.size.width * PIP_FONT_SCALE_FACTOR];
+    UIFont *dualValueFont = [UIFont systemFontOfSize:self.bounds.size.width * DUAL_PIP_FONT_SCALE_FACTOR];
     
     NSMutableAttributedString *valueText = nil;
     
@@ -97,7 +99,7 @@
     } else if (self.playerTwoValue && !self.playerOneValue) {
         valueText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d", self.playerTwoValue] attributes:@{ NSParagraphStyleAttributeName : paragraphStyle, NSFontAttributeName : valueFont, NSForegroundColorAttributeName : [UIColor blueColor] }];
     } else if (self.playerTwoValue && self.playerOneValue) {
-        valueText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d %d", self.playerOneValue, self.playerTwoValue] attributes:@{ NSParagraphStyleAttributeName : paragraphStyle, NSFontAttributeName : valueFont, NSForegroundColorAttributeName : [UIColor redColor] }];
+        valueText = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d %d", self.playerOneValue, self.playerTwoValue] attributes:@{ NSParagraphStyleAttributeName : paragraphStyle, NSFontAttributeName : dualValueFont, NSForegroundColorAttributeName : [UIColor redColor] }];
         [valueText setAttributes:@{NSForegroundColorAttributeName : [UIColor blueColor] } range:NSMakeRange (2,1)];
     }
     

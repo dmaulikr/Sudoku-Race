@@ -12,6 +12,8 @@
 
 @interface SudokuRaceViewController () <UICollectionViewDataSource, UICollectionViewDelegate> // now we must implement mandatory methods in these protocols
 
+@property (strong, nonatomic) NSString *player;
+
 @end
 
 @implementation SudokuRaceViewController
@@ -21,6 +23,7 @@
     if (!_game) {
         NSLog(@"Attempting game lazy instantiation");
         _game = [[SudokuRaceGame alloc] initWithSudokuBoard:[self createSudokuBoard]];
+        self.player = @"one";
     }
     return _game;
 }
@@ -30,12 +33,12 @@
         NSLog(@"Attempting createSudokuBoard");
     return [[SudokuBoard alloc] initWithDifficulty:@"easy"];
 }
-
-
-// NEED TO BUILD PLAYER SWITCHER FEATURE
-- (NSString *)getCurrentPlayer
-{
-    return @"one";
+- (IBAction)selectPlayer:(UISegmentedControl *)sender {
+    if ([self.player isEqualToString:@"one"]) {
+        self.player = @"two";
+    } else {
+        self.player = @"one";
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -100,11 +103,9 @@
     NSIndexPath *indexPath = [self.squareCollectionView indexPathForItemAtPoint:tapLocation];
     if (indexPath) {
         
-        NSString *player = [self getCurrentPlayer];
-        [self.game toggleSelectionStateForPlayer:player forSquareIndex:(indexPath.item)];
+        [self.game toggleSelectionStateForPlayer:self.player forSquareIndex:(indexPath.item)];
         
-        
-        BOOL selectedForPlayer = [self.game selectionStateAtIndex:(indexPath.item) forPlayer:player];
+        BOOL selectedForPlayer = [self.game selectionStateAtIndex:(indexPath.item) forPlayer:self.player];
         
         if (selectedForPlayer) {
             [self showKeyPad];
@@ -112,13 +113,16 @@
             [self hideKeyPad];
         }
         
-        /*
-        [self.game changeValueForPlayer:[self getCurrentPlayer] forSquareIndex:(indexPath.item) withValue:2];
-        */
-        
         [self updateUI];
-        [self.squareCollectionView reloadData];
     }
+}
+
+#define CLEAR_VALUE_CODE 0
+
+- (IBAction)pressKeyPad:(UIButton *)sender
+{
+    [self.game changeValueForPlayer:self.player withValue:[sender.currentTitle intValue]];
+    [self updateUI];
 }
 
 - (void)showKeyPad
