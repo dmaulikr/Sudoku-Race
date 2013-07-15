@@ -99,14 +99,36 @@
     CGPoint tapLocation = [gesture locationInView:self.squareCollectionView];
     NSIndexPath *indexPath = [self.squareCollectionView indexPathForItemAtPoint:tapLocation];
     if (indexPath) {
-    
+        
+        NSString *player = [self getCurrentPlayer];
+        [self.game toggleSelectionStateForPlayer:player forSquareIndex:(indexPath.item)];
+        
+        
+        BOOL selectedForPlayer = [self.game selectionStateAtIndex:(indexPath.item) forPlayer:player];
+        
+        if (selectedForPlayer) {
+            [self showKeyPad];
+        } else {
+            [self hideKeyPad];
+        }
+        
+        /*
         [self.game changeValueForPlayer:[self getCurrentPlayer] forSquareIndex:(indexPath.item) withValue:2];
+        */
         
         [self updateUI];
         [self.squareCollectionView reloadData];
     }
-    
-    
+}
+
+- (void)showKeyPad
+{
+    self.keyPadView.hidden = NO;
+}
+
+- (void)hideKeyPad
+{
+    self.keyPadView.hidden = YES;
 }
 
 @end

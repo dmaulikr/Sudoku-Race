@@ -16,10 +16,14 @@
 @property (readonly, nonatomic) int playerOneScore;
 @property (readonly, nonatomic) int playerTwoScore;
 
-- (void)changeValueForPlayer:(NSString *)player forSquareIndex:(NSUInteger)square withValue:(int)value;
+- (void)changeValueForPlayer:(NSString *)player forSquareIndex:(NSUInteger)index withValue:(int)value;
+
+- (void)toggleSelectionStateForPlayer:(NSString *)player forSquareIndex:(NSUInteger)index;
 
 - (NSUInteger)numberOfSquares;
 
 - (Square *)squareAtIndex:(NSUInteger)index;
+
+- (BOOL)selectionStateAtIndex:(NSUInteger)index forPlayer:(NSString *)player;
 
 @end

@@ -29,12 +29,33 @@
             if (selectedSquare.playerTwoValue != value) {
                 selectedSquare.playerOneValue = value;
             }
-            selectedSquare.playerOneSelected = YES;
         } else if ([player isEqualToString:@"two"]) {
             if (selectedSquare.playerOneValue != value) {
                 selectedSquare.playerTwoValue = value;
             }
-            selectedSquare.playerTwoSelected = YES;
+        }
+    }
+}
+
+- (void)toggleSelectionStateForPlayer:(NSString *)player forSquareIndex:(NSUInteger)index
+{
+    Square *selectedSquare = [self squareAtIndex:index];
+    if (!selectedSquare.isLocked) {
+        if ([player isEqualToString:@"one"]) {
+            selectedSquare.playerOneSelected = !selectedSquare.playerOneSelected;
+        } else if ([player isEqualToString:@"two"]) {
+            selectedSquare.playerTwoSelected = !selectedSquare.playerTwoSelected;
+        }
+    }
+    
+    for (int i = 0; i < [self numberOfSquares]; i++) {
+        if (i != index) {
+            Square *square = [self squareAtIndex:i];
+            if ([player isEqualToString:@"one"]) {
+                square.playerOneSelected = NO;
+            } else if ([player isEqualToString:@"two"]) {
+                square.playerTwoSelected = NO;
+            }            
         }
     }
 }
@@ -50,6 +71,19 @@
     }
     
     return self;
+}
+
+- (BOOL)selectionStateAtIndex:(NSUInteger)index forPlayer:(NSString *)player
+{
+    Square *selectedSquare = [self squareAtIndex:index];
+    
+    if ([player isEqualToString:@"one"]) {
+        return selectedSquare.playerOneSelected;
+    } else if ([player isEqualToString:@"two"]) {
+        return selectedSquare.playerTwoSelected;
+    } else {
+        return NO;
+    }
 }
 
 - (NSUInteger)numberOfSquares

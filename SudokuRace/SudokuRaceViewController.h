@@ -22,4 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *squareCollectionView;
 
+@property (weak, nonatomic) IBOutlet UIView *keyPadView;
+
 @end
