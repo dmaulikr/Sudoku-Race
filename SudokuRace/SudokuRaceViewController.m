@@ -12,18 +12,24 @@
 
 @interface SudokuRaceViewController () <UICollectionViewDataSource, UICollectionViewDelegate> // now we must implement mandatory methods in these protocols
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *playerPicker;
+
 @property (strong, nonatomic) NSString *player;
 
 @end
 
 @implementation SudokuRaceViewController
 
+- (void)viewDidLoad
+{
+    self.player = @"one";
+}
+
 - (SudokuRaceGame *)game
 {
     if (!_game) {
         NSLog(@"Attempting game lazy instantiation");
         _game = [[SudokuRaceGame alloc] initWithSudokuBoard:[self createSudokuBoard]];
-        self.player = @"one";
     }
     return _game;
 }
@@ -122,6 +128,14 @@
 - (IBAction)pressKeyPad:(UIButton *)sender
 {
     [self.game changeValueForPlayer:self.player withValue:[sender.currentTitle intValue]];
+    if (self.game.playerOneNeedsAlert || self.game.playerTwoNeedsAlert) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                        message:@"You can't copy your opponent!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     [self updateUI];
 }
 

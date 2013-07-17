@@ -16,6 +16,9 @@
 @property (readonly, nonatomic) int playerOneScore;
 @property (readonly, nonatomic) int playerTwoScore;
 
+@property (nonatomic) BOOL playerOneNeedsAlert;
+@property (nonatomic) BOOL playerTwoNeedsAlert;
+
 - (void)changeValueForPlayer:(NSString *)player withValue:(int)value;
 
 - (void)toggleSelectionStateForPlayer:(NSString *)player forSquareIndex:(NSUInteger)index;

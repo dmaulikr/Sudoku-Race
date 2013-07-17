@@ -22,6 +22,8 @@
 - (void)changeValueForPlayer:(NSString *)player withValue:(int)value
 {    
     NSLog(@"Attempting to changeValueForPlayer: %@ for value: %d", player, value);
+    self.playerOneNeedsAlert = NO;
+    self.playerTwoNeedsAlert = NO;
     
     Square *selectedSquare = nil;
     for (int i = 0; i < [self numberOfSquares]; i++) {
@@ -45,12 +47,16 @@
                 selectedSquare.playerOneValue = 0;
             } else if (selectedSquare.playerTwoValue != value) {
                 selectedSquare.playerOneValue = value;
+            } else {
+                self.playerOneNeedsAlert = YES;
             }
         } else if ([player isEqualToString:@"two"]) {
             if (value == 0) {
                 selectedSquare.playerTwoValue = 0;
             } else if (selectedSquare.playerOneValue != value) {
                 selectedSquare.playerTwoValue = value;
+            } else {
+                self.playerTwoNeedsAlert = YES;
             }
         }
     }
